@@ -1,0 +1,159 @@
+/* General Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background: #f4f4f4;
+  color: #333;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 100;
+  transition: background-color 0.5s, color 0.5s;
+}
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+}
+
+/* Nav Links */
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: 0.3s;
+}
+body.dark-mode nav a {
+  color: #57b3ff;
+}
+nav a:hover {
+  color: #2575fc;
+  transform: scale(1.1);
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 1 !important; /* Fix fade-up hidden issue */
+  transform: translateY(0) !important; /* Fix translate issue */
+  transition: all 0.5s ease;
+}
+
+/* Fade Animations */
+.fade-in { opacity: 1 !important; animation: fadeIn 1s forwards; }
+.fade-up { opacity: 1 !important; transform: translateY(0) !important; animation: fadeUp 1s forwards; }
+.delay-1s { animation-delay: 0.5s; }
+.delay-2s { animation-delay: 1s; }
+.delay-3s { animation-delay: 1.5s; }
+.delay-4s { animation-delay: 2s; }
+.delay-5s { animation-delay: 2.5s; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease, background-color 0.5s, color 0.5s;
+}
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #f4f4f4;
+}
+
+/* Skill Bars */
+.skill-bar {
+  margin: 15px 0;
+}
+.skill-bar .bar {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+}
+.skill-bar .fill {
+  background: #2575fc;
+  height: 100%;
+  width: 0;
+  animation: fillBar 2s forwards;
+}
+@keyframes fillBar { to { width: var(--width); } }
+
+/* Counters */
+.counters {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+.counter h3 { font-size: 2rem; }
+.counter p { margin-top: 5px; }
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Coming Soon Badge */
+.coming-soon {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #ff9800;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Dark Mode Button */
+.dark-toggle {
+  z-index: 1000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f4;
+  transition: background-color 0.5s, color 0.5s;
+}
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f4f4f4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav { flex-direction: column; }
+  .counters { flex-direction: column; gap: 20px; }
+}
