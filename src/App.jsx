@@ -1,33 +1,34 @@
-import React from "react";
-import NavBar from "./components/NavBar";
-import Header from "./components/Header";
+import NavBar from "./components/Navbar";
+import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import Counters from "./components/Counters";
+import Stats from "./components/Stats";
+import FeaturedProject from "./components/FeaturedProject";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import DarkModeToggle from "./components/DarkModeToggle";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <DarkModeToggle />
+    <>
       <NavBar />
-      <Header />
-      <About />
-      <Skills />
-      <Counters />
-      <Projects />
-      <Education />
-      <Certifications />
-      <Contact />
-      <Footer />
-    </div>
+<Hero />
+<About />
+<Experience />
+<Skills />
+<Stats />
+<FeaturedProject />
+<Projects />
+<Education />
+<Certifications />
+<Contact />
+<Footer />
+    </>
   );
 }
 

@@ -2,32 +2,66 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 const certificates = [
-  { name: "Java", link: "https://drive.google.com/file/d/1H4P72wXefEyIdBCMRvIvUr86aGZ_j_Fw/view?usp=drive_link" },
-  { name: "C", link: "https://drive.google.com/file/d/1eyAnzDwiWAxKh6049VGPu3IxPa2KO_Cg/view?usp=sharing"},
-  { name: "C++", link: "https://drive.google.com/file/d/1lZXu5cQ-lCEK_pi8hMMAFFTIe_ArRlXn/view?usp=sharing" },
-  { name: "Python", link: "https://drive.google.com/file/d/1-RTaqOgV8C_3Hjst709JBp3P-w_4f0Or/view?usp=drive_link" },
-  { name: "HTML", link: "https://drive.google.com/file/d/1jFKQ72XPJ2pKGutUrHDxRKUVyVhlN3T2/view?usp=sharing" },
+  {
+    name: "Java Programming",
+    link: "https://drive.google.com/drive/folders/1g5WT2PM0AMW3Rs3HV7GELisJkqattORk"
+  },
+  {
+    name: "Python Programming",
+    link: "https://drive.google.com/drive/folders/1g5WT2PM0AMW3Rs3HV7GELisJkqattORk"
+  },
+  {
+    name: "C Programming",
+    link: "https://drive.google.com/drive/folders/1g5WT2PM0AMW3Rs3HV7GELisJkqattORk"
+  },
+  {
+    name: "C++ Programming",
+    link: "https://drive.google.com/drive/folders/1g5WT2PM0AMW3Rs3HV7GELisJkqattORk"
+  },
+  {
+    name: "HTML Certification",
+    link: "https://drive.google.com/drive/folders/1g5WT2PM0AMW3Rs3HV7GELisJkqattORk"
+  }
 ];
 
 function Certifications() {
   return (
-    <section id="certifications" className="section py-5">
+    <section
+  id="certifications"
+  className="certifications-section"
+>
       <Container>
-        <h2 className="text-center mb-4">Certifications</h2>
-        <Row className="justify-content-center">
-          {certificates.map((cert, idx) => (
-            <Col key={idx} xs={6} sm={4} md={2} className="mb-3 text-center">
-              <Button
-                href={cert.link}
-                target="_blank"
-                variant="success"
-                className="w-100"
-              >
-                {cert.name}
-              </Button>
+
+        <h2 className="section-title">
+          Certifications
+        </h2>
+
+        <Row>
+
+          {certificates.map((cert,index)=>(
+
+            <Col lg={4} md={6} key={index}>
+
+              <div className="certificate-card">
+
+                <h4>{cert.name}</h4>
+
+                <Button
+                  variant="info"
+                  href={cert.link}
+                  target="_blank"
+                >
+                  View Certificate
+                </Button>
+
+              </div>
+
             </Col>
+
           ))}
+
         </Row>
+
       </Container>
     </section>
   );

@@ -1,28 +1,36 @@
 import React from "react";
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" sticky="top" bg="light" variant="light" className="shadow-sm">
+    <Navbar
+      expand="lg"
+      fixed="top"
+      className="custom-navbar"
+      variant="dark"
+    >
       <Container>
-        <Navbar.Brand href="#">Shravani Badabe</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Brand href="#home">
+          Shravani Badabe        </Navbar.Brand>
+
+        <Navbar.Toggle />
+
+        <Navbar.Collapse>
           <Nav className="ms-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#experience">Experience</Nav.Link>
             <Nav.Link href="#skills">Skills</Nav.Link>
             <Nav.Link href="#projects">Projects</Nav.Link>
             <Nav.Link href="#education">Education</Nav.Link>
-            <Nav.Link href="#certifications">Certifications</Nav.Link>
             <Nav.Link href="#contact">Contact</Nav.Link>
-            <Button
-              href="/SHRAVANI BADABE.pdf"
-              download
-              variant="danger"
-              className="ms-3"
-            >
-              Download Resume
-            </Button>
+            <Nav.Link
+  href="/Shravani Badabe.pdf"
+  download
+  className="resume-btn"
+>
+  Resume
+</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

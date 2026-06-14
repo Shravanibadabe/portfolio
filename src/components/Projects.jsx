@@ -1,61 +1,79 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const projects = [
-  {
-    title: "Smart Loan Approval System",
-    description: "Web-based loan prediction system with analytics dashboard, PDF & CSV export.",
-    github: "https://github.com/Shravanibadabe/smart_loan_system",
-    live: null,
-  },
-  {
-    title: "Import–Export ERP System",
-    description: "ERP system for managing products, orders, and users.",
-    github: "https://github.com/Shravanibadabe/Import_export_erp_system-seller-",
-    live: null,
-  },
-  {
-    title: "Hotel Management System",
-    description: "Room booking, customer management, and billing system.",
-    github: "https://github.com/Shravanibadabe/Online_Restaurant_management_system_python",
-    live: null,
-  },
+{
+title:"AI Interview Mocker",
+tech:"Next.js, Gemini AI, PostgreSQL",
+desc:"AI-powered mock interview platform.",
+github:"https://github.com/Shravanibadabe/ai-interview",
+demo:"https://ai-interview-black-one.vercel.app/dashboard"
+},
+{
+title:"Smart Loan Approval System",
+tech:"PHP, MySQL, JavaScript",
+desc:"ML based loan approval prediction system.",
+github:"https://github.com/Shravanibadabe/smart_loan_system"
+},
+{
+title:"Import Export ERP System",
+tech:"JSP, Servlets, JDBC, MySQL",
+desc:"ERP management platform.",
+github:"https://github.com/Shravanibadabe/Import_export_erp_system-seller-"
+}
 ];
 
 function Projects() {
   return (
-    <section id="projects" className="section py-5 bg-light">
+    <section id="projects" className="projects-section">
       <Container>
-        <h2 className="text-center mb-5">Projects</h2>
+
+        <h2 className="section-title">
+          Projects
+        </h2>
+
         <Row>
-          {projects.map((proj, index) => (
-            <Col md={4} sm={6} className="mb-4" key={index}>
-              <Card className="project-card h-100 shadow-sm border-0">
-                <Card.Body className="d-flex flex-column justify-content-between">
-                  <Card.Title className="text-primary">{proj.title}</Card.Title>
-                  <Card.Text>{proj.description}</Card.Text>
-                  <div className="mt-auto d-flex justify-content-between align-items-center">
-                    <Button
-                      variant="outline-primary"
-                      href={proj.github}
-                      target="_blank"
-                      size="sm"
-                    >
-                      GitHub
-                    </Button>
-                    {proj.live ? (
-                      <Button variant="success" href={proj.live} target="_blank" size="sm">
-                        Live
-                      </Button>
-                    ) : (
-                      <Badge bg="warning text-dark">Coming Soon</Badge>
-                    )}
-                  </div>
+
+          {projects.map((project,index)=>(
+
+            <Col md={4} key={index}>
+
+              <Card className="project-card">
+
+                <Card.Body>
+
+                  <Card.Title>
+                    {project.title}
+                  </Card.Title>
+
+                  <Card.Text>
+                    {project.desc}
+                  </Card.Text>
+
+                  <small>
+                    {project.tech}
+                  </small>
+
+                  <br /><br />
+
+                  <Button
+href={project.github}
+target="_blank"
+variant="outline-info"
+>
+GitHub
+</Button>
+
                 </Card.Body>
+
               </Card>
+
             </Col>
+
           ))}
+
         </Row>
+
       </Container>
     </section>
   );

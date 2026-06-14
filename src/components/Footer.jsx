@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer>
-      <p>© 2026 Shravani Badabe</p>
+    <footer className="footer">
+      © 2026 Shravani Badabe | Built with React 
     </footer>
   );
 }
